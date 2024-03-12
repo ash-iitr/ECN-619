@@ -6,7 +6,7 @@ N = 100;
 k = 20;  % Cardinality of supp(x)
 m = 200; % Overdetermined system as m>N
 noise_variance = 0.01; % given S.D. of noise was 0.1
-lambda = 4;
+lambda = 4; % Tweak this value to get good reconstruction of x
 
 x = zeros(N,1);
 support = randperm(N,k);
@@ -16,7 +16,7 @@ x(support) = randn(k,1); % random k-sparse vector x generated
 
 
 e = sqrt(noise_variance) * randn(m,1); % noise generated
-A = randn(m,N); % Measurement matrix generated
+A = sqrt(1/m)*randn(m,N); % Measurement matrix generated
 
 y = A*x + e;
 
