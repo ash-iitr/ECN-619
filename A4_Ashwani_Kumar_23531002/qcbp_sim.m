@@ -2,7 +2,7 @@ clc;
 close all;
 clear;
 
-N = 100;
+N = 1000;
 k = 20;  % Cardinality of supp(x)
 m = 200; % Overdetermined system as m>N
 noise_variance = 0.01; % given S.D. of noise was 0.1
